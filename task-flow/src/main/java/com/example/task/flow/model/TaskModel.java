@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_usuarios")
-public class TarefaModel {
+public class TaskModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class TarefaModel {
     private String status;
     private LocalDate data = LocalDate.now();
 
-    public TarefaModel(){}
+    public TaskModel(){}
 
     public String getTarefa() {
         return tarefa;
@@ -36,6 +36,9 @@ public class TarefaModel {
 
     public LocalDate getData() {
         return data;
+    }
+    public Long getId(){
+        return id;
     }
 
 }

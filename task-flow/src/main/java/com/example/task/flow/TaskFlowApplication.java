@@ -1,6 +1,6 @@
 package com.example.task.flow;
 
-import com.example.task.flow.model.TarefaModel;
+import com.example.task.flow.model.TaskModel;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TaskFlowApplication {
 
 	public static void main(String[] args) {
-        TarefaModel data = new TarefaModel();
+        TaskModel data = new TaskModel();
 		SpringApplication.run(TaskFlowApplication.class, args);
 	}
 
