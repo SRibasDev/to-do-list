@@ -1,22 +1,32 @@
 package com.example.task.flow.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_usuarios")
+@NoArgsConstructor
 public class TaskModel {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private LocalDate data = LocalDate.now();
     private String tarefa;
     private String status;
-    private LocalDate data = LocalDate.now();
+    private String descricao;
 
-    public TaskModel(){}
+    public Long getId() {
+        return id;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
 
     public String getTarefa() {
         return tarefa;
@@ -34,11 +44,11 @@ public class TaskModel {
         this.status = status;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
-    public Long getId(){
-        return id;
+    public String getDescricao() {
+        return descricao;
     }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }
