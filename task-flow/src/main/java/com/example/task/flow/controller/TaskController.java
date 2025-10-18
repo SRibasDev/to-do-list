@@ -28,8 +28,8 @@ public class TaskController {
     public ResponseEntity<TaskModel> atualizarTarefa(@PathVariable Long id, @RequestBody TaskModel taskModel){
         return taskRepository.findById(id)
                 .map(tarefaExistente -> {
-                    tarefaExistente.setTarefa(tarefaExistente.getTarefa());
-                    tarefaExistente.setStatus(tarefaExistente.getStatus());
+                    tarefaExistente.setTarefa(taskModel.getTarefa());
+                    tarefaExistente.setStatus(taskModel.getStatus());
                     TaskModel atualizado = taskRepository.save(tarefaExistente);
                     return ResponseEntity.ok(atualizado);
                 })
